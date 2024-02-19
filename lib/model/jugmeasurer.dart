@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:bucketapp/model/jugaction.dart';
 import 'package:bucketapp/model/jugstep.dart';
 
-class JubMeasurer {
+class JugMeasurer {
   int x;
   int y;
   int z;
@@ -12,13 +12,14 @@ class JubMeasurer {
 
   List<JugStep> bestSolution = [];
 
-  JubMeasurer({
+  JugMeasurer({
     required this.x,
     required this.y,
     required this.z,
   }) {
     reverse = x > y;
 
+    if (x == 0 || y == 0 || z == 0) return;
     if (_isZTooHigh()) return;
     if (!reverse && (z % _gcd(x, y)) != 0) return;
     if (reverse && (z % _gcd(y, x)) != 0) return;

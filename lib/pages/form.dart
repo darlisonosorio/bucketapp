@@ -19,7 +19,7 @@ class _FormPageState extends State<FormPage> {
   final _zController = TextEditingController();
 
   _submit() {
-    final measurer = JubMeasurer(
+    final measurer = JugMeasurer(
       x: int.parse(_xController.text),
       y: int.parse(_yController.text),
       z: int.parse(_zController.text),
@@ -66,18 +66,21 @@ class _FormPageState extends State<FormPage> {
               ),
               const SizedBox(height: 18.0),
               AppTextField(
+                key: const Key('x_field'),
                 icon: _imageAsset(Images.imgBucketX),
                 label: Texts.labelBucketX,
                 controller: _xController,
               ),
               const SizedBox(height: 18.0),
               AppTextField(
+                key: const Key('y_field'),
                 icon: _imageAsset(Images.imgBucketY),
                 label: Texts.labelBucketY,
                 controller: _yController,
               ),
               const SizedBox(height: 18.0),
               AppTextField(
+                key: const Key('z_field'),
                 icon: _imageAsset(Images.imgBucket),
                 label: Texts.labelZ,
                 controller: _zController,

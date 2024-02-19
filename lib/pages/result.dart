@@ -6,7 +6,7 @@ import 'package:bucketapp/model/jugstep.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatefulWidget {
-  final JubMeasurer measurer;
+  final JugMeasurer measurer;
 
   const ResultPage(this.measurer);
 
