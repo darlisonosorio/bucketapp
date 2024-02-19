@@ -11,7 +11,6 @@ class JubMeasurer {
   bool reverse = false;
 
   List<JugStep> bestSolution = [];
-  List<JugStep> otherSolution = [];
 
   JubMeasurer({
     required this.x,
@@ -27,13 +26,7 @@ class JubMeasurer {
     List<JugStep> xToY = _calculateSteps(x, y, z, false);
     List<JugStep> yToX = _calculateSteps(y, x, z, true);
 
-    if (yToX.length < xToY.length) {
-      bestSolution = yToX;
-      otherSolution = xToY;
-    } else {
-      otherSolution = yToX;
-      bestSolution = xToY;
-    }
+    bestSolution = (yToX.length < xToY.length) ? yToX : xToY;
   }
 
   _isZTooHigh() {
